@@ -1,0 +1,27 @@
+<h1 mat-dialog-title *ngIf="!player">Добавление игрока</h1>
+<h1 mat-dialog-title *ngIf="player">Редактивание {{ player.name }}</h1>
+<div mat-dialog-content>
+  <div [formGroup]="formGroup">
+    <mat-form-field *ngIf="!player" class="name">
+      <mat-label floatLabel>Имя</mat-label>
+      <input matInput formControlName="name" required>
+    </mat-form-field>
+    <mat-form-field class="ep">
+      <mat-label floatLabel>EP</mat-label>
+      <input matInput formControlName="ep" required>
+    </mat-form-field>
+    <mat-form-field class="gp">
+      <mat-label floatLabel>GP</mat-label>
+      <input matInput formControlName="gp" required>
+    </mat-form-field>
+    <mat-form-field class="description">
+      <mat-label floatLabel>Description</mat-label>
+      <textarea matInput formControlName="description"></textarea>
+    </mat-form-field>
+  </div>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onCancel()">Отменить</button>
+  <button *ngIf="player" mat-button [mat-dialog-close]="data" color="primary">Сохранить</button>
+  <button *ngIf="!player" mat-button [mat-dialog-close]="data" color="primary">Добавить</button>
+</div>

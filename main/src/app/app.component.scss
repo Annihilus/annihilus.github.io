@@ -1,0 +1,35 @@
+:host {
+  display: grid;
+  grid-template-rows: min-content auto;
+
+  height: 100%;
+}
+
+.wrapper {
+
+
+  height: 100%;
+}
+
+.content {
+  display: grid;
+  grid-template-rows: min-content auto;
+}
+
+.toolbar {
+  display: flex;
+
+  padding: 25px 30px;
+
+  button {
+    margin-right: 10px;
+  }
+}
+
+.addPlayer {
+  position: fixed;
+  z-index: 100;
+
+  bottom: 40px;
+  right: 50px;
+}

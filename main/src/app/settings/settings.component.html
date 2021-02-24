@@ -1,0 +1,20 @@
+<div class="form" [formGroup]="formGroup">
+  <div class="field">
+    <mat-form-field class="minGP">
+      <mat-label floatLabel>Минимальное GP</mat-label>
+      <input matInput formControlName="minGP" required>
+    </mat-form-field>
+  </div>
+  <div class="field">
+    <mat-form-field class="weekEP">
+      <mat-label floatLabel>Недельное еп</mat-label>
+      <input matInput formControlName="weekEP" required>
+    </mat-form-field>
+  </div>
+  <div class="field">
+    <mat-form-field class="decay">
+      <mat-label floatLabel>Дикей</mat-label>
+      <input matInput formControlName="decay" required>
+    </mat-form-field>
+  </div>
+</div>
