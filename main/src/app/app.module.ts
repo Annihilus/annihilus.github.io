@@ -19,11 +19,13 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatTabsModule } from '@angular/material/tabs';
+import { MatMenuModule } from '@angular/material/menu';
 
 import { epgpService } from './service';
 import { PlayersListComponent } from './players-list/players-list.component';
 import { PlayersListItemComponent } from './players-list-item/players-list-item.component';
 import { PlayersAddDialogComponent } from './players-add-dialog/players-add-dialog.component';
+import { PlayersAddEpgpComponent } from './players-add-epgp/players-add-epgp.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,8 @@ import { PlayersAddDialogComponent } from './players-add-dialog/players-add-dial
     SettingsComponent,
     PlayersListComponent,
     PlayersListItemComponent,
-    PlayersAddDialogComponent
+    PlayersAddDialogComponent,
+    PlayersAddEpgpComponent
   ],
   imports: [
     BrowserModule,
@@ -49,7 +52,8 @@ import { PlayersAddDialogComponent } from './players-add-dialog/players-add-dial
     MatSidenavModule,
     MatPaginatorModule,
     MatDialogModule,
-    MatTabsModule
+    MatTabsModule,
+    MatMenuModule,
   ],
   providers: [
     epgpService

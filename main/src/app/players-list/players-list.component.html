@@ -31,12 +31,34 @@
       <td mat-cell *matCellDef="let element">{{ element.pr }}</td>
     </ng-container>
 
-    <!-- PR Column -->
-    <ng-container matColumnDef="actions">
-      <th class="param" mat-header-cell *matHeaderCellDef mat-sort-header></th>
+    <!-- Charge button -->
+    <ng-container matColumnDef="charge">
+      <th class="button" mat-header-cell *matHeaderCellDef mat-sort-header></th>
       <td mat-cell *matCellDef="let element">
-        <button mat-button color="primary" (click)="changeParams(element)">Редактировать</button>
+        <button mat-button color="basic" (click)="chargeEPGP(element)">Начислить</button>
     </ng-container>
+
+    <!-- Toolbar -->
+    <ng-container matColumnDef="toolbar">
+        <th class="toolbar" mat-header-cell *matHeaderCellDef mat-sort-header></th>
+        <td mat-cell *matCellDef="let element">
+          <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+            <mat-icon>more_vert</mat-icon>
+          </button>
+          <mat-menu #menu="matMenu">
+            <button (click)="changeParams(element)" mat-menu-item>
+              <mat-icon>mode</mat-icon>
+              <span>Редактировать</span>
+            </button>
+            <button (click)="deletePlayer(element)" mat-menu-item>
+              <mat-icon>delete</mat-icon>
+              <span>Удалить</span>
+            </button>
+          </mat-menu>
+          <!-- <button mat-button color="primary">Редактировать</button> -->
+      </ng-container>
+
+
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>

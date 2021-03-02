@@ -1,0 +1,25 @@
+<ng-container *ngIf="player">
+
+  <h1 mat-dialog-title>Начислить {{ player.name }}</h1>
+  <div mat-dialog-content>
+    <div [formGroup]="formGroup">
+      <mat-form-field class="reason">
+        <mat-label floatLabel>Причина</mat-label>
+        <input matInput formControlName="reason" required>
+      </mat-form-field>
+      <mat-form-field class="ep">
+        <mat-label floatLabel>EP</mat-label>
+        <input matInput formControlName="ep">
+      </mat-form-field>
+      <mat-form-field class="gp">
+        <mat-label floatLabel>GP</mat-label>
+        <input matInput formControlName="gp">
+      </mat-form-field>
+    </div>
+  </div>
+  <div mat-dialog-actions>
+    <button mat-button (click)="onCancel()">Отменить</button>
+    <button [disabled]="!formGroup.valid" mat-button [mat-dialog-close]="data" color="primary">Начислить</button>
+  </div>
+
+</ng-container>
